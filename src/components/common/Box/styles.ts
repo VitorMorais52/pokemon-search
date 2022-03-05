@@ -7,9 +7,18 @@ export const Container = styled.div`
 
   .image {
     margin-top: 1rem;
-    img {
-      height: 370px;
-      width: 400px;
+
+    @media (max-width: 768px) {
+      img {
+        max-height: 250px;
+        max-width: 250px;
+      }
+    }
+    @media (min-width: 768px) {
+      img {
+        height: 370px;
+        width: 400px;
+      }
     }
   }
 

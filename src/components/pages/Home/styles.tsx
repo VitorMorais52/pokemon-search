@@ -32,15 +32,19 @@ export const Container = styled.main`
       img {
         filter: invert(1);
       }
-    }
 
-    button:hover {
-      background-color: white;
-      opacity: 0.8;
-      transform: scale(1.1);
-      img {
-        filter: invert(0);
+      &:hover {
+        background-color: yellow;
+        opacity: 0.8;
+        transform: scale(1.1);
+        img {
+          filter: invert(0);
+        }
       }
     }
+  }
+
+  @media (max-width: 768px) {
+    margin: 0 2rem;
   }
 `;
