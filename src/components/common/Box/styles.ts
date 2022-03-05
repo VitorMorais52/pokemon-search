@@ -8,14 +8,12 @@ export const Container = styled.div`
   .image {
     margin-top: 1rem;
 
-    @media (max-width: 768px) {
-      img {
+    img {
+      @media (max-width: 768px) {
         max-height: 250px;
         max-width: 250px;
       }
-    }
-    @media (min-width: 768px) {
-      img {
+      @media (min-width: 768px) {
         height: 370px;
         width: 400px;
       }
