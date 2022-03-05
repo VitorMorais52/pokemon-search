@@ -11,6 +11,8 @@ export const GlobalStyle = createGlobalStyle`
 
     body {
         -webkit-font-smoothing: antialiased;
+        background-color: rgba(186, 229, 255, 0.9);
+
     }
 
     body, input, button, textarea {
@@ -29,11 +31,7 @@ export const GlobalStyle = createGlobalStyle`
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        background-color: #e1e0e0;
-        
-        main {
-            margin-top: 6rem;
-        }
+        padding-top: 3rem;
 
     }
 
