@@ -67,10 +67,10 @@ function Home() {
         handleClick={() => searchPokemon()}
       />
       <div className="nav">
-        <button onClick={handlePrevPokemon} name="nextPokemon">
+        <button onClick={handlePrevPokemon} data-testid="previousPokemon">
           <img src={iconArrowLeft} alt="icon previous pokemon" />
         </button>
-        <button onClick={handleNextPokemon} name="previousPokemon">
+        <button onClick={handleNextPokemon} data-testid="nextPokemon">
           <img src={iconArrowRight} alt="icon next pokemon" />
         </button>
       </div>

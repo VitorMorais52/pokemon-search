@@ -2,7 +2,7 @@ import { useState } from "react";
 
 //stylesheets and icons
 import { Container, Button } from "./styles";
-import IconSearch from "../../../assets/searchIcon.svg";
+import iconSearch from "../../../assets/searchIcon.svg";
 
 type TitledInputProps = {
   title?: string;
@@ -28,8 +28,8 @@ function TitledInput({
             value={value}
             onChange={({ target }) => changeValue(target.value)}
           />
-          <Button onClick={handleClick}>
-            <img src={IconSearch} alt="search icon" width="26px" />
+          <Button data-testid="btnSearch" onClick={handleClick}>
+            <img src={iconSearch} alt="search icon" width="26px" />
           </Button>
         </div>
       </label>
