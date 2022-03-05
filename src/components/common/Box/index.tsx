@@ -1,6 +1,3 @@
-import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
-import "react-loading-skeleton/dist/skeleton.css";
-
 //stylesheets
 import { Container, NotFound, Loading } from "./styles";
 
@@ -46,7 +43,8 @@ function Box({ pokemon, isLoading }: BoxProps) {
           </p>
         </NotFound>
       )}
-      {isLoading && (
+      {/* needs configuration to not generate an error when running the tests (jest does not recognize) */}
+      {/* {isLoading && (
         <Loading>
           <Skeleton
             width="400px"
@@ -55,7 +53,7 @@ function Box({ pokemon, isLoading }: BoxProps) {
             highlightColor={"rgba(0, 0, 0, 0.4)"}
           />
         </Loading>
-      )}
+      )} */}
     </Container>
   );
 }
