@@ -55,3 +55,18 @@ export const NotFound = styled.div`
     margin-top: 1rem;
   }
 `;
+
+export const Loading = styled.div`
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    max-height: 250px;
+    max-width: 250px;
+  }
+  @media (min-width: 768px) {
+    width: 400px;
+    height: 417px;
+  }
+`;

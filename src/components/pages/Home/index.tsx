@@ -75,7 +75,7 @@ function Home() {
         </button>
       </div>
 
-      <Box pokemon={infosPokemon} />
+      <Box pokemon={infosPokemon} isLoading={isFetching} />
     </Container>
   );
 }

@@ -1,4 +1,8 @@
-import { Container, NotFound } from "./styles";
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
+
+//stylesheets
+import { Container, NotFound, Loading } from "./styles";
 
 type SpritProps = {
   [key: string]: Record<string, Record<string, string>>;
@@ -12,15 +16,16 @@ type PokemonProps = {
 
 type BoxProps = {
   pokemon: PokemonProps;
+  isLoading: boolean;
 };
 
-function Box({ pokemon }: BoxProps) {
+function Box({ pokemon, isLoading }: BoxProps) {
   const mainImage = pokemon.sprites?.other.dream_world.front_default;
   const secondaryImage = pokemon.sprites?.other.home.front_default;
 
   return (
     <Container>
-      {pokemon.id ? (
+      {!isLoading && pokemon.id && (
         <div className="content">
           <div className="infos">
             <div className="value">
@@ -32,13 +37,24 @@ function Box({ pokemon }: BoxProps) {
             <img src={mainImage || secondaryImage} alt="pokemon image" />
           </div>
         </div>
-      ) : (
+      )}
+      {!isLoading && !pokemon.id && (
         <NotFound>
           <h2>No pokemon found</h2>
           <p>
             Make sure you search for a valid name or an ID between 1 and 898
           </p>
         </NotFound>
+      )}
+      {isLoading && (
+        <Loading>
+          <Skeleton
+            width="400px"
+            height="370px"
+            baseColor={"rgba(0,0,0,0.2)"}
+            highlightColor={"rgba(0, 0, 0, 0.4)"}
+          />
+        </Loading>
       )}
     </Container>
   );
